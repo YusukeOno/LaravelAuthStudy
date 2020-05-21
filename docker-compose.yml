@@ -3,6 +3,9 @@ version: '3.4'
 services:
   php:
     image: laravel
+    container_name: laravel-container
     build:
       context: .
       dockerfile: Docker/laravel/Dockerfile
+    ports:
+      - "80:80"
