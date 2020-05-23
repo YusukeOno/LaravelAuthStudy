@@ -1,4 +1,4 @@
-version: '3.4'
+version: "3.4"
 
 services:
   php:
@@ -9,3 +9,10 @@ services:
       dockerfile: Docker/laravel/Dockerfile
     ports:
       - "80:80"
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: laravel-db
+      MYSQL_USER: laravel-user
+      MYSQL_PASSWORD: laravel-password
