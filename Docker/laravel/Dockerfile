@@ -18,6 +18,8 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
 COPY ./Docker/laravel/my-vhost.conf /etc/httpd/conf.d
 COPY ./Docker/laravel/00-mpm.conf /etc/httpd/conf.modules.d
 
+COPY ./local.laravel-auth /var/www/local.laravel-auth
+
 EXPOSE 80
 
 CMD ["apachectl", "-D", "FOREGROUND"]
