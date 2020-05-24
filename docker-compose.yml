@@ -9,6 +9,8 @@ services:
       dockerfile: Docker/laravel/Dockerfile
     ports:
       - "80:80"
+    volumes:
+      - ./local.laravel-auth:/var/www/local.laravel-auth:cached
   db:
     image: mysql:8.0
     environment:
