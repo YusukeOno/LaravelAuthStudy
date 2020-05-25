@@ -12,7 +12,11 @@ services:
     volumes:
       - ./local.laravel-auth:/var/www/local.laravel-auth:cached
   db:
-    image: mysql:8.0
+    image: db
+    container_name: db-container
+    build:
+      context: .
+      dockerfile: Docker/mysql/Dockerfile
     environment:
       MYSQL_ROOT_PASSWORD: secret
       MYSQL_DATABASE: laravel-db

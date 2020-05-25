@@ -1,0 +1,1 @@
+ALTER USER 'laravel-user'@'%' IDENTIFIED WITH mysql_native_password BY 'laravel-password';
