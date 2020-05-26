@@ -4,7 +4,8 @@ LABEL Name=laravelauthstudy Version=0.0.1
 ENV LC_ALL=C
 
 RUN dnf -y update && \
-    dnf -y install glibc-langpack-ja httpd php php-pdo php-mysqlnd php-json php-mbstring php-xml zip
+    dnf -y install glibc-langpack-ja httpd php php-pdo php-mysqlnd php-json php-mbstring php-xml zip npm && \
+    dnf clean all
 
 WORKDIR /var/www/local.laravel-auth
 
