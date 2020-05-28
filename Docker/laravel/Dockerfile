@@ -14,7 +14,9 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
     php -r "unlink('composer-setup.php');" && \
     composer global require hirak/prestissimo && \
     composer create-project --prefer-dist laravel/laravel . "6.*" && \
-    chmod -R 777 /var/www/local.laravel-auth/storage
+    chmod -R 777 /var/www/local.laravel-auth/storage && \
+    npm install && \
+    npm run dev
 
 COPY ./Docker/laravel/my-vhost.conf /etc/httpd/conf.d
 COPY ./Docker/laravel/00-mpm.conf /etc/httpd/conf.modules.d
